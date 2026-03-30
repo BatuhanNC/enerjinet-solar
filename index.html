@@ -1,0 +1,777 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/4cac67ab94.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>enerjiNET Solar & Elektrik</title>
+  </head>
+  <style>
+    :root {
+      --primary-color: #303391;
+      --secondary-color: #59b94b;
+      --thirty-color: #f39c12;
+      --fourty-color: #2980b9;
+      --background-color: #f4f4f4;
+      --text-color: #333;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: var(--background-color);
+      color: var(--text-color);
+    }
+    .innerContainer {
+      width: 100%;
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 50px 0;
+    }
+    .container {
+      width: 100%;
+      margin: 0 auto;
+    }
+    header {
+      background-color: #000000;
+      color: white;
+      padding: 10px 0;
+      display: flex;
+      justify-content: center;
+    }
+    header .innerContainer {
+      padding: 0;
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+    .logo {
+      width: 250px;
+      height: 75px;
+    }
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+    }
+    nav ul li {
+      margin-left: 20px;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav ul li a:hover {
+      color: var(--secondary-color);
+    }
+    /* CONTAINER */
+    .container {
+      width: 100%;
+    }
+    .container .primary_color {
+      color: var(--primary-color);
+    }
+    .container .secondary_color {
+      color: var(--secondary-color);
+    }
+    .container .thirty_color {
+      color: var(--thirty-color);
+    }
+    .container .global__title {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 1.5vw;
+      position: relative;
+    }
+    .container .global__title::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      transform: translateX(-50%);
+      width: 80%;
+      height: 25px;
+      background-color: var(--secondary-color);
+      clip-path: polygon(50px 0, 100% 0, calc(100% - 50px) 100%, 0 100%);
+      box-shadow: inset -1px -1px 5px rgba(0, 0, 0, 0.4);
+    }
+    .container .global__title::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      width: 40%;
+      height: 25px;
+      background-color: var(--thirty-color);
+      clip-path: polygon(50px 0, 100% 0, 100% 100%, 0 100%);
+      box-shadow: inset -1px -1px 5px rgba(0, 0, 0, 0.4);
+    }
+    .global__padding {
+      padding: 10px 0 0 0;
+    }
+    /* BANNER */
+    .container .banner {
+      width: 100%;
+      height: 300px;
+      background-color: #007bff;
+      padding: 0 40px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+    .container .banner video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+    .container .banner::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+    .container .banner .banner__text {
+      color: white;
+      z-index: 2;
+      position: relative;
+    }
+    .container .banner .banner__text h1 {
+      font-size: 4vw;
+      text-align: center;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    }
+    .container .banner .banner__text h3 {
+      font-size: 1.5vw;
+      text-align: center;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+      color: #e0e0e0;
+    }
+    /* ABOUT ENERJINET */
+    .about {
+      width: 100%;
+    }
+    .about__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .about__inner-box {
+      width: 48%;
+    }
+    .about__inner-box h1 {
+      font-size: 0;
+      margin-bottom: 20px;
+    }
+    .about__inner-box h1 span {
+      font-size: 2.5vw;
+    }
+    .about__inner-box h3 {
+      font-size: 1.2vw;
+      margin-bottom: 30px;
+      color: #555;
+    }
+    .about__inner-box img {
+      width: 100%;
+      border-radius: 8px;
+    }
+    .about__projects {
+      display: flex;
+      justify-content: space-between;
+    }
+    .about__projects-box {
+      width: 30%;
+      background-color: #fff;
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    .about__projects-box h3 {
+      color: var(--primary-color);
+      margin-bottom: 10px;
+    }
+    .about__projects-box h4 {
+      color: var(--text-color);
+    }
+    /* LINE */
+    .line {
+      width: 100%;
+      padding: 20px 0;
+      background-color: #f8f9fa;
+      display: flex;
+      flex-direction: row;
+      background: linear-gradient(
+        135deg,
+        var(--primary-color),
+        var(--thirty-color)
+      );
+    }
+
+    .line__box {
+      width: 50%;
+      margin: 0 auto;
+      text-align: center;
+      color: #fff;
+      font-weight: 600;
+      font-size: 1.2em;
+      padding: 20px;
+    }
+    .line .line__box:nth-child(1) {
+      margin-bottom: 20px;
+      background-color: var(--fourty-color);
+      clip-path: polygon(0 0, 100% 0, calc(100% - 50px) 100%, 0 100%);
+    }
+    .line .line__box:nth-child(2) {
+      margin-bottom: 20px;
+      background-color: var(--thirty-color);
+      clip-path: polygon(50px 0, 100% 0, 100% 100%, 0 100%);
+    }
+    /* SERVICES */
+    .services {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .service__inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .service__inner-box {
+      width: 24%;
+      background-color: #fff;
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .service__inner-box img {
+      height: 100px;
+      margin-right: 20px;
+    }
+    .service__box-title {
+      font-size: 1.7em;
+      font-weight: 600;
+      color: var(--primary-color);
+      margin-bottom: 10px;
+    }
+    .service__box-text {
+      color: var(--text-color);
+    }
+    /* STATS */
+    .stats {
+      width: 100%;
+      background-color: var(--fourty-color);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .stats .global__title::before {
+      background-color: var(--thirty-color);
+      clip-path: polygon(0 0, calc(100% - 50px) 0, 100% 100%, 0 100%);
+    }
+    .stats .global__title::after {
+      background-color: var(--secondary-color);
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 50px 100%);
+    }
+    .stats__inner {
+      display: flex;
+      justify-content: space-between;
+      display: grid;
+      grid-template-columns: repeat(3, 270px);
+      gap: 20px;
+      position: relative;
+      z-index: 2;
+    }
+    .stats__box {
+      text-align: center;
+      background-color: #2578a7;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      align-items: center;
+      position: relative;
+      border-radius: 8px;
+      padding: 20px;
+    }
+
+    .stats__box::before {
+      content: "";
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      bottom: -2px;
+      right: -2px;
+      background: linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0.2),
+        rgba(255, 255, 255, 0.2),
+        rgba(255, 255, 255, 0.8)
+      );
+      border-radius: 8px;
+      z-index: -1;
+      transition: 500ms linear;
+    }
+    .stats__box:hover::before {
+      background: #fff;
+    }
+    .stats__box .item i {
+      font-size: 40px;
+      object-fit: contain;
+      margin: 0 auto;
+    }
+    .stats__box h3 {
+      font-size: 1.2vw;
+    }
+    .stats__box h4 {
+      margin-top: 10px;
+      font-size: 1.5vw;
+    }
+    .stats__box h4 p {
+      display: inline-block;
+      font-size: 1vw;
+      color: #e0e0e0;
+    }
+    /* PROJECTS */
+    .projects {
+      width: 100%;
+      padding: 20px 0;
+    }
+    .projects__inner {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .project__box {
+      height: 250px;
+      background-color: #fff;
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    .project__box:hover {
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transform: translateY(-5px);
+      transition: all 0.3s ease-in-out;
+    }
+    .project__box-title {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      right: 100px;
+      font-size: 1em;
+      font-weight: 600;
+      color: #fff;
+      background-color: var(--secondary-color);
+      margin-bottom: 0;
+      padding: 5px;
+      border-radius: 5px;
+      clip-path: polygon(0 0, 100% 0, calc(100% - 20px) 100%, 0 100%);
+      box-shadow:
+        1px 1px 3px rgba(0, 0, 0, 0.2),
+        -1px -1px 5px rgba(0, 0, 0, 0.2),
+        1px 1px 5px rgba(0, 0, 0, 0.2),
+        -1px -1px 3px rgba(0, 0, 0, 0.2);
+    }
+    .project__box-date {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      font-size: 1em;
+      font-weight: 600;
+      color: #fff;
+      background-color: var(--thirty-color);
+      padding: 5px 5px 5px 20px;
+      border-radius: 5px;
+      clip-path: polygon(20px 0, 100% 0, 100% 100%, 0 100%);
+      box-shadow:
+        1px 1px 3px rgba(0, 0, 0, 0.2),
+        -1px -1px 3px rgba(0, 0, 0, 0.2),
+        1px -1px 3px rgba(0, 0, 0, 0.2),
+        -1px 1px 3px rgba(0, 0, 0, 0.2);
+    }
+    .project__box-text {
+      position: absolute;
+      left: 10px;
+      top: -100%;
+      font-size: 0.9em;
+      font-weight: 600;
+      padding: 5px;
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(3px);
+      color: #fff;
+      border-radius: 0 0 5px 5px;
+      transition: 200ms all ease-in-out;
+    }
+    .project__box-text ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+    }
+    .project__box-text ul li {
+      text-align: left;
+    }
+    .project__box:hover .project__box-text {
+      top: 0;
+      transition: top 0.5s ease-in-out;
+    }
+    .all__projects-button {
+      display: grid;
+      margin: 20px auto 0 auto;
+      text-align: center;
+    }
+    .all__projects-button a {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: var(--fourty-color);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease-in-out;
+    }
+    .all__projects-button a:hover {
+      background-color: var(--secondary-color);
+    }
+    /* FOOTER */
+    .footer {
+      background-color: #000000;
+      color: #fff;
+      padding: 20px 0;
+    }
+    .footer__content {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .footer__logo img {
+      max-width: 100%;
+    }
+    .footer__links a {
+      color: #fff;
+      text-decoration: none;
+    }
+    /* ANIMATION */
+    @keyframes punch {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.3);
+        color: var(--secondary-color);
+      } /* %30 büyür ve turuncu olur */
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    .punch-effect {
+      display: inline-block; /* Animasyonun çalışması için şart */
+      animation: punch 0.5s ease-in-out;
+    }
+  </style>
+  <body>
+    <header>
+      <div class="innerContainer">
+        <div class="header">
+          <div class="logo"><img src="./images/companyLogo.png" alt="" /></div>
+          <nav>
+            <ul>
+              <li><a href="">Anasayfa</a></li>
+              <li><a href="">Hakkımızda</a></li>
+              <li><a href="">Hizmetlerimiz</a></li>
+              <li><a href="">Projelerimiz</a></li>
+              <li><a href="">İletişim</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <div class="container">
+      <!-- BANNER -->
+      <div class="banner">
+        <div class="innerContainer">
+          <video
+            autoplay
+            muted
+            loop
+            playsinline
+            poster="video-kapak-resmi.jpg"
+            class="bg-video"
+          >
+            <source src="./images/banner_video.mp4" type="video/mp4" />
+            Tarayıcınız video etiketini desteklemiyor.
+          </video>
+          <div class="banner__text">
+            <h1>
+              Temiz<span class="secondary_color">&nbsp;Enerji,</span
+              ><span class="primary_color">&nbsp;NET</span>&nbsp;Çözümler
+            </h1>
+            <h3>Lider GES kurulum ve profesyonel bakım hizmetleri</h3>
+          </div>
+        </div>
+      </div>
+      <!-- ABOUT ENERJINET   -->
+      <div class="about">
+        <div class="innerContainer">
+          <div class="about__inner">
+            <div class="about__inner-box about__grid">
+              <div class="about__company">
+                <h1>
+                  <span class="secondary_color">Enerji</span>
+                  <span class="primary_color">NET</span>
+                  <span>&nbsp;Solar</span>
+                </h1>
+                <h3>
+                  Yenilenebilir enerji ve güneş enerjisi sistemleri konusunda
+                  uzmanlaşmış, sürdürülebilir çözümler sunan yerli bir firmayız.
+                </h3>
+              </div>
+              <div class="about__projects">
+                <div class="about__projects-box">
+                  <h3 class="counter" data-target="100">0</h3>
+                  <h4>Tamamlanmış Proje</h4>
+                </div>
+                <div class="about__projects-box">
+                  <h3 class="counter" data-target="10">0</h3>
+                  <h4>Yıllık Tecrübe</h4>
+                </div>
+                <div class="about__projects-box">
+                  <h3 class="counter" data-target="100">0</h3>
+                  <h4>Müşteri Memnuniyeti</h4>
+                </div>
+              </div>
+            </div>
+            <div class="about__inner-box about__grid">
+              <img src="./images/about_image.jpg" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- LINE -->
+      <div class="line">
+        <div class="line__box">Uçtan uca GES kurulumu</div>
+        <div class="line__box">Profesyonel GES Bakım-Onarım</div>
+      </div>
+      <!-- SERVICES -->
+      <div class="services global__padding">
+        <h1 class="global__title">Sunduğumuz Hizmetler</h1>
+
+        <div class="innerContainer">
+          <div class="service__inner">
+            <div class="service__inner-box">
+              <img src="./images/solar-panel.png" alt="" />
+              <div class="service__box-title">GES Kurulumu</div>
+              <div class="service__box-text">
+                Fotovoltaik sistemler ve güneş paneli montajı konusunda uzman
+                ekibimizle hizmetinizdeyiz
+              </div>
+            </div>
+            <div class="service__inner-box">
+              <img src="./images/solar-energy.png" alt="" />
+              <div class="service__box-title">Çatı Üstü GES</div>
+              <div class="service__box-text">
+                Çatı tipi güneş enerjisi sistemleri ile boşta kalan çatı
+                alanlarınızı enerji üretim merkezine çeviriyoruz.
+              </div>
+            </div>
+            <div class="service__inner-box">
+              <img src="./images/energy.png" alt="" />
+              <div class="service__box-title">Arazi Tipi GES</div>
+              <div class="service__box-text">
+                Yer tipi güneş enerjisi santralleri ve arazi tipi solar
+                sistemler için özel çözümler sunuyoruz.
+              </div>
+            </div>
+            <div class="service__inner-box">
+              <img src="./images/maintenance.png" alt="" />
+              <div class="service__box-title">Bakım-Onarım</div>
+              <div class="service__box-text">
+                Güneş enerjisi sistemlerinizin bakım ve onarımını profesyonel
+                ekiplerimizle hızlı ve güvenilir şekilde sağlıyoruz.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- STATS -->
+      <div class="stats global__padding">
+        <h1 class="global__title">Toplam Kurulu Gücümüz</h1>
+        <div class="innerContainer">
+          <div class="stats__inner">
+            <div class="stats__box">
+              <div class="item"><i class="fa-solid fa-solar-panel"></i></div>
+              <div class="item">
+                <h3>Kurulu Gücümüz</h3>
+                <h4>
+                  <b class="counter" data-target="13">0</b>
+                  <p>GW</p>
+                </h4>
+              </div>
+            </div>
+            <div class="stats__box">
+              <div class="item"><i class="fa-solid fa-car-battery"></i></div>
+              <div class="item">
+                <h3>
+                  Montajı Yapılan <br />
+                  Panel Sayısı
+                </h3>
+                <h4>
+                  <b class="counter" data-target="500000">0</b>
+                  <p>adet</p>
+                </h4>
+              </div>
+            </div>
+            <div class="stats__box">
+              <div class="item"><i class="fa-solid fa-tree"></i></div>
+              <div class="item">
+                <h3>Eşdeğer Ağaç Sayısı</h3>
+                <h4>
+                  <b class="counter" data-target="1000">0</b>
+                  <p>adet</p>
+                </h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- PROJECTS -->
+      <div class="projects global__padding">
+        <h2 class="global__title">Projelerimizle Biz</h2>
+        <div class="innerContainer">
+          <div class="projects__inner">
+            <div
+              class="project__box"
+              style="
+                background-image: url(https://www.vaisala.com/sites/default/files/styles/max_650x650/public/2023-11/LIFT-Solar-panels-with-sunrise-800x450.jpg?itok=SFoYsFpX);
+              "
+            >
+              <div class="project__box-title">Project 1</div>
+              <div class="project__box-date">2023-01-01</div>
+              <div class="project__box-text">
+                <ul>
+                  <li><b>Proje Adı:</b> Akbayır GES</li>
+                  <li><b>Lokasyon:</b> Akbayır, İzmir</li>
+                  <li><b>Kurulu Güç:</b> 2.500 kWp</li>
+                </ul>
+              </div>
+            </div>
+            <div
+              class="project__box"
+              style="
+                background-image: url(https://www.vaisala.com/sites/default/files/styles/max_650x650/public/2023-11/LIFT-Solar-panels-with-sunrise-800x450.jpg?itok=SFoYsFpX);
+              "
+            >
+              <div class="project__box-title">Project 2</div>
+              <div class="project__box-date">2023-01-01</div>
+              <div class="project__box-text">
+                <ul>
+                  <li><b>Proje Adı:</b> Project 2</li>
+                  <li><b>Lokasyon:</b> Location 2</li>
+                  <li><b>Kurulu Güç:</b> 1.350 kWp</li>
+                </ul>
+              </div>
+            </div>
+            <div
+              class="project__box"
+              style="
+                background-image: url(https://www.vaisala.com/sites/default/files/styles/max_650x650/public/2023-11/LIFT-Solar-panels-with-sunrise-800x450.jpg?itok=SFoYsFpX);
+              "
+            >
+              <div class="project__box-title">Project 3</div>
+              <div class="project__box-date">2023-01-01</div>
+              <div class="project__box-text">
+                <ul>
+                  <li><b>Proje Adı:</b> Project 3</li>
+                  <li><b>Lokasyon:</b> Location 3</li>
+                  <li><b>Kurulu Güç:</b> 15.200 kWp</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="all__projects-button">
+            <a href="./projects.html">Tüm Projeler</a>
+          </div>
+        </div>
+      </div>
+      <!-- FOOTER -->
+      <footer class="footer global__padding">
+        <div class="innerContainer">
+          <div class="footer__content">
+            <div class="footer__logo">
+              <img src="./images/companyLogo.png  " alt="Logo" />
+            </div>
+            <div class="footer__links">
+              <a href="./about.html">Hakkımızda</a>
+              <a href="./projects.html">Projeler</a>
+              <a href="./contact.html">İletişim</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script>
+      document.querySelectorAll(".counter").forEach((counter) => {
+        const target = +counter.getAttribute("data-target");
+        let count = 0;
+
+        // Küçük sayılar (örn: 10) için daha yavaş, büyük sayılar (örn: 100) için daha hızlı tempo
+        const duration = target < 20 ? 100 : 30;
+
+        const updateCount = () => {
+          // Eğer hedef küçükse her seferinde 1 artır, büyükse hedefe göre oranla
+          const inc = target < 20 ? 1 : Math.ceil(target / 100);
+
+          if (count < target) {
+            count += inc;
+            // Hedefi aşmamak için kontrol
+            counter.innerText = count > target ? target : count;
+            setTimeout(updateCount, duration);
+          } else {
+            counter.innerText = target.toLocaleString();
+            // Animasyon sınıfını ekle
+            counter.classList.add("punch-effect");
+
+            // Animasyon bittikten sonra sınıfı temizle (Tekrar çalışabilmesi için)
+            setTimeout(() => {
+              counter.classList.remove("punch-effect");
+            }, 500);
+          }
+        };
+
+        updateCount();
+      });
+    </script>
+  </body>
+</html>
