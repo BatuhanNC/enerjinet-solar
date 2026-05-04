@@ -353,6 +353,8 @@ nav ul li a:hover {
 .service__inner-box {
   width: 24%;
   background-color: #fff;
+  background-image: url(/assets/images/structure/enerjinet-pattern.png);
+  background-size: cover;
   padding: 10px;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -468,83 +470,86 @@ nav ul li a:hover {
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
-.project__box {
-  height: 250px;
-  background-color: #fff;
-  padding: 10px;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
-  position: relative;
-  overflow: hidden;
-}
+
 .project__box:hover {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   transform: translateY(-5px);
   transition: all 0.3s ease-in-out;
 }
-.project__box-title {
+
+.project__box {
+  min-height: 250px;
+  overflow: hidden;
+  position: relative;
+
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  background-size: cover;
+  padding: 0;
+  box-shadow:
+    -2px -2px 5px rgba(0, 0, 0, 0.2),
+    2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+.project__box a {
+  display: block;
+  color: #000;
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+}
+.project__box .projects__box-power {
+  color: #fff;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: var(--primary-color);
+}
+.project__info {
   position: absolute;
-  bottom: 10px;
+  width: 100%;
+  height: 30%;
+  bottom: 0;
+  background-color: var(--primary-color);
+  clip-path: polygon(0% 0%, 50% 40%, 100% 0%, 100% 100%, 0% 100%);
+  z-index: 2;
+}
+.project__info:nth-child(2) {
+  position: absolute;
+  width: 100%;
+  height: 30%;
+  bottom: 0;
+  background-color: var(--secondary-color);
+  clip-path: polygon(0% 0%, 50% 20%, 100% 0%, 100% 100%, 0% 100%);
+  z-index: 1;
+}
+.project__info .project__info-name {
+  position: absolute;
+  bottom: 25px;
+  right: 10px;
   left: 10px;
-  right: 100px;
-  font-size: 1em;
+  z-index: 3;
   font-weight: 600;
   color: #fff;
-  background-color: var(--secondary-color);
-  margin-bottom: 0;
-  padding: 5px;
-  border-radius: 5px;
-  clip-path: polygon(0 0, 100% 0, calc(100% - 20px) 100%, 0 100%);
-  box-shadow:
-    1px 1px 3px rgba(0, 0, 0, 0.2),
-    -1px -1px 5px rgba(0, 0, 0, 0.2),
-    1px 1px 5px rgba(0, 0, 0, 0.2),
-    -1px -1px 3px rgba(0, 0, 0, 0.2);
+  display: flex;
 }
-.project__box-date {
+.project__info .project__info-name p {
+  margin-left: 5px;
+  font-size: 13px;
+  color: var(--secondary-color);
+}
+.project__info .project__info-location {
   position: absolute;
+  width: fit-content;
   bottom: 10px;
   right: 10px;
-  font-size: 1em;
-  font-weight: 600;
-  color: #fff;
-  background-color: var(--thirty-color);
-  padding: 5px 5px 5px 20px;
-  border-radius: 5px;
-  clip-path: polygon(20px 0, 100% 0, 100% 100%, 0 100%);
-  box-shadow:
-    1px 1px 3px rgba(0, 0, 0, 0.2),
-    -1px -1px 3px rgba(0, 0, 0, 0.2),
-    1px -1px 3px rgba(0, 0, 0, 0.2),
-    -1px 1px 3px rgba(0, 0, 0, 0.2);
-}
-.project__box-text {
-  position: absolute;
   left: 10px;
-  top: -100%;
-  font-size: 0.9em;
+  z-index: 3;
   font-weight: 600;
-  padding: 5px;
-  text-align: center;
-  background-color: rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(3px);
-  color: #fff;
-  border-radius: 0 0 5px 5px;
-  transition: 200ms all ease-in-out;
+  color: #fcc904;
+  font-size: 12px;
 }
-.project__box-text ul {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-}
-.project__box-text ul li {
-  text-align: left;
-}
-.project__box:hover .project__box-text {
-  top: 0;
-  transition: top 0.5s ease-in-out;
-}
+/*  */
 .all__projects-button {
   display: grid;
   margin: 20px auto 0 auto;
