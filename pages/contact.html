@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/responsive.css" />
+    <script
+      src="https://kit.fontawesome.com/4cac67ab94.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>enerjiNET Solar - Bizimle İletişime Geçin!</title>
+  </head>
+  <style>
+    .contact {
+      background-color: var(--background-color);
+    }
+    .contact p:nth-child(1) {
+      margin-bottom: 30px;
+    }
+    .contact p {
+      line-height: 1.4;
+      text-align: center;
+    }
+    .contact__info {
+      list-style-type: none;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 15px;
+      margin-bottom: 15px;
+    }
+    .contact__info li {
+      margin-bottom: 15px;
+      padding: 10px;
+      font-size: 16px;
+      color: #000;
+      display: flex;
+      align-items: center;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .contact__info li i {
+      color: var(--primary-color);
+      margin-right: 10px;
+      font-size: 40px;
+    }
+    .contact__info li a {
+      color: var(--primary-color);
+      text-decoration: none;
+    }
+  </style>
+  <body>
+    <header>
+      <div class="innerContainer">
+        <div class="header">
+          <div class="logo">
+            <img src="../assets/images/logos/enerjinet-logo.png" alt="" />
+          </div>
+          <div class="menu__toggle">
+            <!-- <i class="fa-solid fa-bars-staggered"></i> -->
+            <svg
+              class="toggle__menu"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 448 512"
+            >
+              <!-- Üst Çizgi (Sarı) -->
+              <path
+                class="line-side"
+                d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96z"
+              />
+
+              <!-- Orta Çizgi (Kırmızı) -->
+              <path
+                class="line-middle"
+                d="M0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32z"
+              />
+
+              <!-- Alt Çizgi (Kırmızı) -->
+              <path
+                class="line-side"
+                d="M448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"
+              />
+            </svg>
+          </div>
+          <nav>
+            <ul>
+              <li class="mobile__logo">
+                <img src="./assets/images/logos/enerjinet-logo.png" alt="" /><i
+                  class="fa-solid fa-xmark toggle__menu"
+                ></i>
+              </li>
+              <li><a href="/index.html">Anasayfa</a></li>
+              <li><a href="/pages/about.html">Hakkımızda</a></li>
+              <li><a href="/pages/service.html">Hizmetlerimiz</a></li>
+              <li><a href="/pages/projects.html">Projelerimiz</a></li>
+              <li><a href="/pages/contact.html">İletişim</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <div class="container">
+      <div class="contact global__padding">
+        <h1 class="global__title">
+          <div class="right"></div>
+          <p>Bizimle İletişime Geçin!</p>
+          <div class="left"></div>
+        </h1>
+        <div class="innerContainer reveal-box">
+          <p>
+            Bize ulaşmak için aşağıdaki iletişim bilgilerini kullanabilirsiniz.
+            Sorularınızı yanıtlamaktan memnuniyet duyarız!
+          </p>
+          <ul class="contact__info">
+            <li>
+              <i class="fa-solid fa-phone"></i> <b>Telefon:</b> +90 123 456 7890
+            </li>
+            <li>
+              <i class="fa-solid fa-envelope"></i> <b>E-posta:</b>
+              <a href="mailto:info@enerjinet.com">info@enerjinet.com</a>
+            </li>
+            <li>
+              <i class="fa-solid fa-location-dot"></i>
+              <p>
+                <b>Adres:</b> 123 Solar Sokak, Güneşli Mahallesi, İstanbul,
+                Türkiye
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <footer class="footer global__padding">
+      <div class="innerContainer non_padding">
+        <div class="footer__content footer__grid">
+          <div class="footer__logo">
+            <img src="../assets/images/logos/enerjinet-logo.png" alt="Logo" />
+          </div>
+          <div class="footer__links footer__grid">
+            <div class="footer__title">Hızlı Linkler</div>
+            <ul>
+              <li>
+                <a href="./about.html"
+                  ><i class="fa-solid fa-house"></i>Anasayfa</a
+                >
+              </li>
+              <li>
+                <a href="./about.html"
+                  ><i class="fa-solid fa-circle-info"></i>Hakkımızda</a
+                >
+              </li>
+              <li>
+                <a href="./projects.html"
+                  ><i class="fa-solid fa-diagram-project"></i>Projeler</a
+                >
+              </li>
+              <li>
+                <a href="./contact.html"
+                  ><i class="fa-solid fa-phone"></i>İletişim</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer__social footer__grid">
+            <div class="footer__title">Bağlantılar</div>
+            <a href="#"><i class="fa-brands fa-instagram"></i>İnstagram</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__copyright">
+        &copy; 2026 <span class="secondary_color">enerji</span
+        ><span class="primary_color">NET</span> Solar & Elektrik. Tüm hakları
+        saklıdır.
+      </div>
+    </footer>
+    <script src="../assets/js/main.js"></script>
+  </body>
+</html>

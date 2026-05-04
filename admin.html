@@ -1,0 +1,1142 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/4cac67ab94.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      :root {
+        --menu-bg: #19202f;
+        --body-bg-rgb: #0d1117;
+        --primary-color: rgba(var(--primary-rgb), 1);
+        --success-color: rgba(var(--success-rgb), 1);
+        --danger-color: rgba(var(--danger-rgb), 1);
+        --info-color: rgba(var(--info-rgb), 1);
+        --primary-rgb: 1, 98, 232;
+        --success-rgb: 34, 192, 60;
+        --danger-rgb: 238, 51, 94;
+        --info-rgb: 0, 185, 255;
+        --warning-rgb: 251, 188, 11;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        width: 100%;
+        height: 100vh;
+        background-color: var(--body-bg-rgb);
+        color: #fff;
+        overflow: hidden;
+      }
+      .row {
+        height: 100%;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 5px;
+      }
+      .col-12 {
+        background-color: red;
+        grid-column: span 12;
+      }
+      .col-11 {
+        background-color: blue;
+        grid-column: span 11;
+      }
+      .col-10 {
+        background-color: rgb(8, 118, 76);
+        grid-column: span 10;
+      }
+      .col-9 {
+        background-color: rgb(85, 255, 0);
+        grid-column: span 9;
+      }
+      .col-8 {
+        background-color: rgb(187, 255, 0);
+        grid-column: span 8;
+      }
+      .col-7 {
+        background-color: rgb(55, 255, 0);
+        grid-column: span 7;
+      }
+      .col-6 {
+        background-color: rgb(255, 170, 0);
+        grid-column: span 6;
+      }
+      .col-5 {
+        background-color: rgb(255, 0, 162);
+        grid-column: span 5;
+      }
+      .col-4 {
+        background-color: rgb(255, 0, 72);
+        grid-column: span 4;
+      }
+      .col-3 {
+        background-color: rgb(255, 0, 128);
+        grid-column: span 3;
+      }
+      .col-2 {
+        background-color: rgb(0, 242, 255);
+        grid-column: span 2;
+      }
+      .col-1 {
+        background-color: rgb(255, 94, 0);
+        grid-column: span 1;
+      }
+      .col-1,
+      .col-2,
+      .col-3,
+      .col-4,
+      .col-5,
+      .col-6,
+      .col-7,
+      .col-8,
+      .col-9,
+      .col-10,
+      .col-11,
+      .col-12 {
+        box-sizing: border-box;
+        background-color: transparent;
+      }
+      /* ALL STYLES */
+      ul {
+        list-style: none;
+        width: 100%;
+      }
+      .hover-effect:hover {
+        opacity: 0.8;
+      }
+      /* TOP BAR */
+      .top__bar {
+        height: 80px;
+        background-color: var(--menu-bg);
+        padding: 10px;
+        box-shadow: 2px 0 5px rgba(255, 255, 255, 0.2);
+      }
+      .top__bar img {
+        width: 100%;
+      }
+      .logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .welcome__admin {
+        font-size: 20px;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin-left: 20px;
+      }
+      .welcome__admin .admin__name {
+        background: linear-gradient(
+          to right,
+          var(--primary-color),
+          var(--success-color),
+          var(--danger-color),
+          var(--info-color),
+          var(--primary-color)
+        );
+        background-size: 300% 100%;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: scroll-gradiant 10s linear infinite;
+      }
+      @keyframes scroll-gradiant {
+        0% {
+          background-position: 0% 0%;
+        }
+        100% {
+          background-position: -300% 0%;
+        }
+      }
+      .admin__profile {
+        background: linear-gradient(
+          to right,
+          var(--primary-color),
+          var(--success-color)
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        position: relative;
+      }
+      .admin__profile p::before {
+        content: "";
+        position: absolute;
+        bottom: 10px;
+        left: 20%;
+        right: 20%;
+        border-radius: 10px;
+        height: 2px;
+        background: linear-gradient(
+          to right,
+          var(--primary-color),
+          var(--success-color)
+        );
+      }
+      .admin__profile .avatar_head i {
+        font-size: 22px;
+        margin-right: 3px;
+      }
+
+      .admin__actions {
+        position: absolute;
+        top: 100%;
+        background-color: var(--menu-bg);
+        border-radius: 4px;
+        z-index: 3;
+        color: #fff;
+        border-top: 1px solid var(--primary-color);
+        box-shadow:
+          1px 1px 1px rgba(255, 255, 255, 0.1),
+          -1px 0px 1px rgba(255, 255, 255, 0.1);
+        visibility: hidden;
+        opacity: 0;
+        transform: translateY(10px);
+        transition: all 0.3s ease;
+      }
+      .admin__actions:before {
+        content: "";
+        position: absolute;
+        top: -20px;
+        left: calc(50% - 10px);
+        border-width: 10px;
+        border-style: solid;
+        border-color: transparent transparent var(--primary-color) transparent;
+      }
+      .admin__actions ul li {
+        padding: 2px;
+      }
+      .admin__actions ul li a {
+        text-decoration: none;
+        -webkit-text-fill-color: initial;
+        color: #acacac;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        padding: 5px 10px;
+        border-radius: 3px;
+      }
+      .admin__actions ul li a:hover {
+        background-color: var(--primary-color);
+        color: #fff;
+      }
+      .admin__actions ul li i {
+        margin-right: 8px;
+      }
+      .admin__profile:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+      }
+      .admin__profile:hover .admin__actions {
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0);
+      }
+      /* header */
+      .mobile__menu {
+        display: none;
+      }
+      header {
+        padding: 10px;
+        background-color: var(--menu-bg);
+        height: 100vh;
+      }
+      header nav {
+        display: flex;
+        align-items: flex-end;
+      }
+      header nav ul li {
+        margin-bottom: 15px;
+        position: relative;
+        padding-right: 10px;
+      }
+      header nav ul li::before {
+        content: "";
+        position: absolute;
+        top: calc(50% - 5px);
+        left: calc(-5px - -2px / 2);
+        width: 10px;
+        height: 10px;
+        border-radius: 10px;
+        background-color: var(--body-bg-rgb);
+        z-index: 1;
+      }
+      header nav ul li::after {
+        content: "";
+        position: absolute;
+        top: -10px;
+        width: 2px;
+        height: 50px;
+        border-radius: 10px;
+        background-color: var(--body-bg-rgb);
+        z-index: 0;
+      }
+      header nav ul li a {
+        text-decoration: none;
+        color: #acacac;
+        font-size: 16px;
+        padding: 5px 10px;
+        display: block;
+        border-radius: 4px;
+        width: 100%;
+        margin-left: 10px;
+      }
+      header nav ul li:hover::before {
+        background-color: var(--primary-color);
+      }
+      header nav ul li a:hover {
+        background-color: var(--primary-color);
+        color: #fff;
+      }
+      header nav ul li a:hover i {
+        color: #fff;
+        transition: transform 0.3s ease;
+        transform: rotate(360deg);
+      }
+
+      header nav ul li a i {
+        margin-right: 8px;
+      }
+      /* CONTENT */
+      .content {
+        padding: 20px;
+        overflow: auto !important;
+        height: calc(100% - 100px) !important;
+      }
+      .content__bar {
+        font-size: 16px;
+        margin-bottom: 20px;
+        background-color: var(--menu-bg);
+        color: #acacac;
+        padding: 10px;
+        border-radius: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .content__bar .content__bar-actions {
+        display: flex;
+        align-items: center;
+      }
+      .content__bar .content__bar-actions .content__bar-search {
+        display: flex;
+        align-items: center;
+      }
+
+      .content__bar-actions .add__tool {
+        height: 30px;
+        background-color: var(--primary-color);
+        color: #fff;
+        border: none;
+        padding: 0 10px;
+        border-radius: 4px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        text-transform: capitalize;
+        margin: 5px 0 5px 0;
+      }
+      .content__bar .search {
+        height: 30px;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 4px 0 0 4px;
+        margin: 5px 0 5px 10px;
+      }
+      .content__bar .search:focus {
+        outline: none;
+      }
+      .content__bar .content__bar-actions i {
+        height: 30px;
+        background-color: var(--primary-color);
+        cursor: pointer;
+        padding: 5px;
+        color: #fff;
+        border-radius: 0 4px 4px 0;
+        display: flex;
+        align-items: center;
+      }
+      .content__tools table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      .content__tools table th,
+      .content__tools table td {
+        border: 1px solid var(--menu-bg);
+        padding: 8px;
+        text-align: center;
+      }
+      .content__tools table th {
+        background-color: var(--menu-bg);
+        color: var(--danger-color);
+      }
+      .content__tools table img {
+        width: 100px;
+      }
+      .content__tools table button {
+        padding: 5px 10px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      .content__tools table button i {
+        font-size: 20px;
+      }
+      .btn_edit {
+        background-color: var(--primary-color);
+        color: #fff;
+      }
+      .btn_note {
+        background-color: var(--info-color);
+        color: #fff;
+        margin-left: 5px;
+      }
+      @media (max-width: 768px) {
+        .content {
+          padding: 0 5px;
+        }
+        .non-mobile {
+          display: none;
+        }
+        .mob-12 {
+          grid-column: span 12;
+        }
+        .mob-11 {
+          grid-column: span 11;
+        }
+        .mob-10 {
+          grid-column: span 10;
+        }
+        .mob-9 {
+          grid-column: span 9;
+        }
+        .mob-8 {
+          grid-column: span 8;
+        }
+        .mob-7 {
+          grid-column: span 7;
+        }
+        .mob-6 {
+          grid-column: span 6;
+        }
+        .mob-5 {
+          grid-column: span 5;
+        }
+        .mob-4 {
+          grid-column: span 4;
+        }
+        .mob-3 {
+          grid-column: span 3;
+        }
+        .mob-2 {
+          grid-column: span 2;
+        }
+        .mob-1 {
+          grid-column: span 1;
+        }
+        .top__bar {
+          height: auto;
+          display: sticky;
+          top: 0;
+        }
+        .mobile__menu {
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          padding: 10px;
+          font-size: 24px;
+          cursor: pointer;
+        }
+        .header {
+          height: auto;
+          display: none;
+          position: sticky;
+          top: 70px;
+        }
+        .header nav {
+          flex-direction: column;
+          height: auto;
+        }
+        .header nav ul li {
+          margin-bottom: 10px;
+        }
+        .content {
+          height: auto !important;
+        }
+        .content__bar {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .content__bar .content__bar-actions {
+          flex-wrap: wrap;
+          justify-content: flex-end;
+          margin-top: 10px;
+        }
+        .content__detail img {
+          width: 50px !important;
+        }
+      }
+    </style>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 mob-12 top__bar">
+          <div class="row">
+            <div class="col-2 mob-5 logo">
+              <img src="./images/companyLogo.png" alt="" />
+            </div>
+            <div class="col-8 non-mobile welcome__admin">
+              <p class="admin__name">Hey&nbsp;Batuhan! Welcome back!</p>
+              &nbsp;👋
+            </div>
+            <div class="col-2 mob-6 admin__profile">
+              <div class="avatar_head">
+                <i class="fa-solid fa-circle-user"></i>
+              </div>
+              <p>BatuhanCam</p>
+              <div class="admin__actions">
+                <ul>
+                  <li>
+                    <a href="#"><i class="fa-solid fa-user"></i> Profile</a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fa-solid fa-cog"></i> Settings</a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fa-solid fa-power-off"></i> Logout</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="mobile__menu mob-1">
+              <i class="fa-solid fa-bars-staggered"></i>
+            </div>
+          </div>
+        </div>
+        <!-- HEADER start------------------------------------------------------------------------------------------------ -->
+        <div class="col-2 mob-12 header">
+          <header>
+            <nav>
+              <ul>
+                <li>
+                  <a href="#"><i class="fa-solid fa-house"></i>Back Site</a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa-solid fa-chart-bar"></i>Dashboard</a>
+                </li>
+                <li>
+                  <a href="#"
+                    ><i class="fa-solid fa-diagram-project"></i>Projects</a
+                  >
+                </li>
+                <li>
+                  <a href="#"
+                    ><i class="fa-solid fa-address-card"></i>Personal</a
+                  >
+                </li>
+                <li>
+                  <a href="#"
+                    ><i class="fa-solid fa-turkish-lira-sign"></i>Pay List</a
+                  >
+                </li>
+                <li>
+                  <a href="#"
+                    ><i class="fa-solid fa-screwdriver-wrench"></i>Tools</a
+                  >
+                </li>
+                <li>
+                  <a href="#"><i class="fa-solid fa-gear"></i>Site Settings</a>
+                </li>
+              </ul>
+            </nav>
+          </header>
+        </div>
+        <!-- CONTENT start -->
+        <div class="col-10 mob-12 content">
+          <div class="content__bar">
+            Dashboard/Tools
+            <div class="content__bar-actions">
+              <button class="add__tool hover-effect">
+                add new tool
+                <i class="fa-solid fa-plus"></i>
+              </button>
+              <div class="content__bar-search">
+                <input type="text" class="search" placeholder="Search..." />
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="content__detail content__tools">
+            <table>
+              <tr>
+                <th>Tool Name</th>
+                <th>Tool Piece</th>
+                <th>Tool Image</th>
+                <th>Tool Note</th>
+                <th>Action</th>
+              </tr>
+              <tr>
+                <td>Dewalt Matkap</td>
+                <td>6</td>
+                <td>
+                  <img
+                    src="https://www.isaleti.com/shop/bg/53/myassets/products/292/dewalt-dcd805e2t-18v-1-7ah-li-ion-power-stack-komursuz-cift-akulu-darbeli-matkap-18551.png?revision=1763446895"
+                    alt=""
+                  />
+                </td>
+                <td>2 adet sağlam 4 adet arızalı</td>
+                <td>
+                  <button class="btn_edit hover-effect">
+                    <i class="fa-regular fa-pen-to-square"></i>
+                  </button>
+                  <button class="btn_note hover-effect">
+                    <i class="fa-solid fa-note-sticky"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>Dewalt Batarya</td>
+                <td>10</td>
+                <td>
+                  <img
+                    src="https://cdn.akakce.com/dewalt/dewalt-dcb184-18-volt-5-0-ah-li-on-yedek-aku-z.jpg"
+                    alt=""
+                  />
+                </td>
+                <td>hepsi sağlam</td>
+                <td>
+                  <button class="btn_edit hover-effect">
+                    <i class="fa-regular fa-pen-to-square"></i>
+                  </button>
+                  <button class="btn_note hover-effect">
+                    <i class="fa-solid fa-note-sticky"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>Einhell Batarya</td>
+                <td>10</td>
+                <td>
+                  <img
+                    src="https://cdn.akakce.com/x/einhell/einhell-power-x-change-plus-18-v-4-ah-yedek-aku.jpg"
+                    alt=""
+                  />
+                </td>
+                <td>hepsi sağlam</td>
+                <td>
+                  <button class="btn_edit hover-effect">
+                    <i class="fa-regular fa-pen-to-square"></i>
+                  </button>
+                  <button class="btn_note hover-effect">
+                    <i class="fa-solid fa-note-sticky"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>Einhell Darbeli Matkap</td>
+                <td>10</td>
+                <td>
+                  <img
+                    src="https://www.kurtkent.com/images/urunler/einhell-tp-ci-18-220-li-bl-solo-akulu-darbeli-vida-resim-10774.webp"
+                    alt=""
+                  />
+                </td>
+                <td>hepsi sağlam</td>
+                <td>
+                  <button class="btn_edit hover-effect">
+                    <i class="fa-regular fa-pen-to-square"></i>
+                  </button>
+                  <button class="btn_note hover-effect">
+                    <i class="fa-solid fa-note-sticky"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>Einhell Spiral</td>
+                <td>2</td>
+                <td>
+                  <img
+                    src="https://cdn.dsmcdn.com/mnresize/400/-/ty1663/prod/QC/20250415/11/cf0520ef-a795-3131-8e6f-91451b8501e3/1_org_zoom.jpg"
+                    alt=""
+                  />
+                </td>
+                <td>hepsi bozuk</td>
+                <td>
+                  <button class="btn_edit hover-effect">
+                    <i class="fa-regular fa-pen-to-square"></i>
+                  </button>
+                  <button class="btn_note hover-effect">
+                    <i class="fa-solid fa-note-sticky"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>Dewalt Duvar Delme</td>
+                <td>1</td>
+                <td>
+                  <img
+                    src="https://m.media-amazon.com/images/I/71hEjhJFbyL.jpg"
+                    alt=""
+                  />
+                </td>
+                <td>hepsi sağlam</td>
+                <td>
+                  <button class="btn_edit hover-effect">
+                    <i class="fa-regular fa-pen-to-square"></i>
+                  </button>
+                  <button class="btn_note hover-effect">
+                    <i class="fa-solid fa-note-sticky"></i>
+                  </button>
+                </td>
+              </tr>
+            </table>
+          </div> -->
+          <!-- cONTENT fınısh -->
+          <!-- GAME START -->
+          <style>
+            .players {
+              margin-bottom: 20px;
+              overflow-x: auto;
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 20px;
+            }
+            .players table {
+              width: 100%;
+              border-collapse: collapse;
+            }
+            .players table th,
+            .players table td {
+              border: 1px solid var(--menu-bg);
+              padding: 8px;
+              text-align: center;
+            }
+            .players table th {
+              background-color: var(--menu-bg);
+              color: var(--info-color);
+            }
+            .teamData {
+              justify-content: space-around;
+              margin-bottom: 20px;
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 20px;
+              position: relative;
+            }
+            .teamData .clock {
+              position: absolute;
+              width: 100px;
+              height: 30px;
+              top: 20%;
+              left: 50%;
+              right: 50%;
+              transform: translateX(-50%);
+              font-size: 18px;
+              font-weight: bold;
+              background-color: var(--danger-color);
+              padding: 5px 10px;
+              border-radius: 5px;
+              z-index: 3;
+            }
+            .teamData .macEkran {
+              position: absolute;
+              width: 30%;
+              height: 50px;
+              top: 40%;
+              left: 50%;
+              right: -50%;
+              transform: translate(-50%, -50%);
+              font-size: 24px;
+              font-weight: bold;
+              background-color: var(--success-color);
+              padding: 10px 20px;
+              border-radius: 5px;
+              z-index: 2;
+              text-align: center;
+            }
+            .teamData .teamBox {
+              background-color: var(--menu-bg);
+              padding: 10px;
+              border-radius: 5px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              display: flex;
+              flex-direction: column;
+              gap: 20px;
+            }
+
+            .team-length {
+              font-weight: bold;
+              font-size: 18px;
+            }
+            .teamBox img {
+              width: 100px;
+              animation: golAnim 5s ease-in-out infinite;
+            }
+            .teamData button {
+              grid-column: span 2;
+              padding: 10px 20px;
+              background-color: var(--primary-color);
+              color: #fff;
+              border: none;
+              border-radius: 5px;
+              cursor: pointer;
+            }
+            @keyframes golAnim {
+              0% {
+                transform: translateY(0);
+              }
+              50% {
+                transform: translateY(-10px);
+              }
+              100% {
+                transform: translateY(0);
+              }
+            }
+          </style>
+          <div class="teamData">
+            <div class="clock"></div>
+            <div class="macEkran">Super League</div>
+            <div class="teamBox">
+              <img
+                src="https://avatars.mds.yandex.net/get-sport/1642542/e0ab7b4d81674b6368d08b7faa0dd21c/orig"
+                alt=""
+              />
+
+              <div class="team-length team1"></div>
+            </div>
+            <div class="teamBox">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/BesiktasJK-Logo.svg/250px-BesiktasJK-Logo.svg.png"
+                alt=""
+              />
+              <div class="team-length team2"></div>
+            </div>
+            <button onclick="oyna()">Maç Yap</button>
+          </div>
+          <div class="players">
+            <table>
+              <thead>
+                <tr>
+                  <th>İsim</th>
+                  <th>Ülke</th>
+                  <th>Yaş</th>
+                  <th>Mevki</th>
+                </tr>
+              </thead>
+              <tbody id="Juventus"></tbody>
+            </table>
+            <table>
+              <thead>
+                <tr>
+                  <th>İsim</th>
+                  <th>Ülke</th>
+                  <th>Yaş</th>
+                  <th>Mevki</th>
+                </tr>
+              </thead>
+              <tbody id="Besiktas"></tbody>
+            </table>
+          </div>
+
+          <script>
+            // İsim kütüphanesi (Geliştirilebilir)
+            const data = {
+              countries: [
+                "Türkiye",
+                "Brezilya",
+                "Almanya",
+                "Fransa",
+                "Arjantin",
+              ],
+              names: {
+                Türkiye: ["Arda", "Emre", "Burak", "Melih", "Can"],
+                Brezilya: ["Ricardo", "ninho", "Lucas", "Tiago", "Douglas"],
+                Almanya: ["Hans", "Müller", "Lukas", "Stefan", "Thomas"],
+              },
+              surnames: {
+                Türkiye: ["Yılmaz", "Kaya", "Demir", "Çelik", "Öztürk"],
+                Brezilya: ["Silva", "Santos", "Ferreira", "Oliveira", "Souza"],
+                Almanya: ["Schmidt", "Schneider", "Fischer", "Weber", "Wagner"],
+              },
+              mevkiler: ["GK", "DF", "OS", "FW"],
+            };
+            function generatePlayer(mevki) {
+              // 1. Ülke ve İsim Seçimi
+              const country =
+                data.countries[
+                  Math.floor(Math.random() * data.countries.length)
+                ];
+              const nameList = data.names[country] || data.names["Türkiye"]; // Hata payı için fallback
+              const surnameList =
+                data.surnames[country] || data.surnames["Türkiye"];
+
+              const fullName = `${nameList[Math.floor(Math.random() * nameList.length)]} ${surnameList[Math.floor(Math.random() * surnameList.length)]}`;
+
+              // 2. Yetenek ve Potansiyel (Çan eğrisi benzeri basit rastgelelik)
+              const rating = Math.floor(Math.random() * 40) + 55; // 55-95 arası
+              const potential =
+                Math.floor(Math.random() * (99 - rating)) + rating; // Rating'den düşük olamaz
+
+              // 3. Yaş (Genç oyuncu gelme ihtimali daha yüksek)
+              const age = Math.floor(Math.random() * 18) + 17; // 17-35 arası
+
+              // 4. Fiyat Hesaplama Algoritması
+              // Mantık: Rating karesiyle doğru orantılı, yaşla ters orantılı.
+              let baseValue = Math.pow(rating, 2) * (potential / 10);
+              //mevki seçimi
+              // Yaş çarpanı (Yaşlandıkça fiyatın düşmesi için)
+              let ageMultiplier = 1;
+              if (age > 28) {
+                ageMultiplier = 1 - (age - 28) * 0.12; // 28'den sonra her yıl %12 değer kaybı
+              } else if (age < 22) {
+                ageMultiplier = 1 + (22 - age) * 0.05; // Genç yetenek primi
+              }
+
+              let finalPrice = Math.floor(baseValue * ageMultiplier * 100); // 100 ile çarparak market değerine çeviriyoruz
+
+              return {
+                name: fullName,
+                country: country,
+                age: age,
+                rating: rating,
+                potential: potential,
+                marketValue: finalPrice.toLocaleString("tr-TR") + " €",
+                position: mevki,
+              };
+            }
+            function newTeam() {
+              const kadroLimitleri = {
+                GK: 2, // 2 Kaleci
+                DF: 5, // 5 Defans
+                OS: 5, // 5 Orta Saha
+                FW: 3, // 3 Forvet
+              };
+
+              let yeniTakim = [];
+
+              // Mevki isimlerini (GK, DF...) tek tek dönüyoruz
+              for (let mevki in kadroLimitleri) {
+                let gerekenSayi = kadroLimitleri[mevki];
+
+                // O mevkiden kaç tane lazımsa o kadar oyuncu üret
+                for (let i = 0; i < gerekenSayi; i++) {
+                  let yeniOyuncu = generatePlayer(mevki); // Mevkiyi zorunlu olarak gönderiyoruz
+                  yeniTakim.push(yeniOyuncu);
+                }
+              }
+              return yeniTakim;
+            }
+            // Test: 5 tane oyuncu üretelim
+            // FIRST TEAM TEST
+            if (!localStorage.getItem("Besiktas")) {
+              localStorage.setItem("Besiktas", JSON.stringify(newTeam()));
+            }
+            // SECOND TEAM TEST
+            if (!localStorage.getItem("Juventus")) {
+              localStorage.setItem("Juventus", JSON.stringify(newTeam()));
+            }
+            let besiktas = JSON.parse(localStorage.getItem("Besiktas"));
+            let juventus = JSON.parse(localStorage.getItem("Juventus"));
+            console.table(besiktas);
+            besiktas.forEach((element) => {
+              let players = `
+                <tr>
+                  <td>${element.name}</td>
+                  <td>${element.country}</td>
+                  <td>${element.age}</td>
+                  <td>${element.position}</td>
+                </tr>
+              `;
+              document.getElementById("Besiktas").innerHTML += players;
+            });
+            juventus.forEach((element) => {
+              let players = `
+                <tr>
+                  <td>${element.name}</td>
+                  <td>${element.country}</td>
+                  <td>${element.age}</td>
+                  <td>${element.position}</td>
+                </tr>
+              `;
+              document.getElementById("Juventus").innerHTML += players;
+            });
+            let teamPover = 0;
+            function calculateTeamPower(team) {
+              return team.reduce((total, player) => total + player.rating, 0);
+            }
+            //
+            //
+            //
+            const mevkiAgirliklari = {
+              FW: 10, // En yüksek ihtimal
+              OS: 5, // Orta saha
+              DF: 1, // Defans (nadiren)
+              GK: 0.1, // Kaleci (mucizevi)
+            };
+            //
+            //
+            //
+            function golAtaniSec(takim) {
+              let adayHavuzu = [];
+
+              takim.forEach((oyuncu) => {
+                // Oyuncunun mevkisine göre ağırlığını al
+                let agirlik = mevkiAgirliklari[oyuncu.position] || 1;
+
+                // Bu ağırlık kadar oyuncunun ismini havuza ekle
+                // Örneğin forvet (FW) ise havuza 10 tane "Arda" eklenir.
+                for (let i = 0; i < agirlik; i++) {
+                  adayHavuzu.push(oyuncu);
+                }
+              });
+
+              // Havuzdan rastgele birini seç
+              return adayHavuzu[Math.floor(Math.random() * adayHavuzu.length)];
+            }
+            //
+            //
+            //
+            // FOOTBALL TIME EVERYONE
+
+            function oyna(takim1, takim2, takim1Ad, takim2Ad) {
+              let p1 = calculateTeamPower(takim1);
+              let p2 = calculateTeamPower(takim2);
+
+              // Güçlere biraz rastgelelik ekleyelim (Örn: +/- %20 performans dalgalanması)
+              let t1Performans = p1 * (0.8 + Math.random() * 0.4);
+              let t2Performans = p2 * (0.8 + Math.random() * 0.4);
+
+              let skor1 = 0;
+              let skor2 = 0;
+              let goller = [];
+
+              // Performans farkına göre gol ihtimalleri (Basit mantık)
+              if (t1Performans > t2Performans) {
+                skor1 = Math.floor(Math.random() * 4); // 0-3 arası gol
+                skor2 = Math.floor(Math.random() * 2); // 0-1 arası gol
+              } else {
+                skor1 = Math.floor(Math.random() * 2);
+                skor2 = Math.floor(Math.random() * 4);
+              }
+              // Takım 1'in gollerini ata
+              for (let i = 0; i < skor1; i++) {
+                let golcu = golAtaniSec(takim1);
+                goller.push({ takim: takim1Ad, isim: golcu.name });
+              }
+
+              // Takım 2'in gollerini ata
+              for (let i = 0; i < skor2; i++) {
+                let golcu = golAtaniSec(takim2);
+                goller.push({ takim: takim2Ad, isim: golcu.name });
+              }
+              return {
+                macSonucu: `${takim1Ad} ${skor1} - ${skor2} ${takim2Ad}`,
+                istatistik: { skor1, skor2 },
+                goller: goller,
+              };
+            }
+            let macSonucu = oyna(juventus, besiktas, "Juventus", "Besiktas");
+            let gollerx = macSonucu.goller.map(
+              (gol) => `${gol.isim} (${gol.takim})`,
+            );
+            console.log(
+              macSonucu.macSonucu,
+              macSonucu.goller.filter((gol) => gol.takim === "Juventus")
+                .length +
+                " golü Juventus attı, " +
+                macSonucu.goller.filter((gol) => gol.takim === "Besiktas")
+                  .length +
+                " golü Besiktas attı.",
+              "Gollerin detayları:",
+              gollerx,
+            );
+            //
+            //
+            //
+            //
+            document.querySelector(".team1").textContent =
+              `Team Juventus Power: ${calculateTeamPower(juventus)}`;
+            document.querySelector(".team2").textContent =
+              `Team Besiktas Power: ${calculateTeamPower(besiktas)}`;
+
+            document
+              .querySelector(".teamData button")
+              .addEventListener("click", (e) => {
+                document.querySelector(".teamData button").style.display =
+                  "none";
+                const durum = document.querySelector(".macEkran");
+                durum.textContent = "Maç Başlıyor...";
+                setTimeout(() => {
+                  durum.textContent = "Maç Başladı...";
+                  resetMatch();
+                }, 2000);
+                setTimeout(() => {
+                  durum.textContent = "İk Yarı Sona Erdi...";
+                  clearInterval(timemach);
+                  timemach = null;
+                }, 27000);
+                setTimeout(() => {
+                  durum.textContent = "İkinci Yarı Başladı...";
+                  resetMatch();
+                }, 30000);
+                setTimeout(() => {
+                  durum.textContent = "Maç Sona Erdi...";
+                  clearInterval(timemach);
+                  timemach = null;
+                }, 54000);
+                setTimeout(() => {
+                  durum.textContent = macSonucu.macSonucu;
+                }, 54000);
+              });
+            function resetMatch() {
+              timemach = setInterval(() => {
+                const clock = document.querySelector(".clock");
+                let currentTime = clock.textContent.split(":");
+                let minutes = parseInt(currentTime[0]) || 0;
+                let seconds = parseInt(currentTime[1]) || 0;
+
+                seconds++;
+                if (seconds >= 60) {
+                  seconds = 0;
+                  minutes++;
+                }
+                clock.textContent = `${minutes.toString().padStart(2, "0")}:${seconds
+                  .toString()
+                  .padStart(2, "0")}`;
+              }, 10);
+            }
+          </script>
+        </div>
+      </div>
+    </div>
+    <script>
+      const mobileMenu = document.querySelector(".mobile__menu");
+      const header = document.querySelector(".header");
+
+      mobileMenu.addEventListener("click", () => {
+        if (header.style.display === "block") {
+          header.style.display = "none";
+        } else {
+          header.style.display = "block";
+        }
+      });
+    </script>
+  </body>
+</html>

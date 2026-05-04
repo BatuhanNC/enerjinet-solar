@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/responsive.css" />
+    <title>enerjiNET Solar - Bugüne Kadar Neler Yaptık?</title>
+  </head>
+  <style>
+    .projects {
+      background-color: var(--background-color);
+    }
+    .projects__list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+    .projects__list .project__box {
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+      background-size: cover;
+      padding: 0;
+      box-shadow:
+        -2px -2px 5px rgba(0, 0, 0, 0.2),
+        2px 2px 5px rgba(0, 0, 0, 0.2);
+    }
+    .projects__list .project__box a {
+      display: block;
+      color: #000;
+      text-decoration: none;
+      width: 100%;
+      height: 100%;
+    }
+    .projects__list .project__box .projects__box-power {
+      color: #fff;
+      font-weight: bold;
+      padding: 5px 10px;
+      border-radius: 5px;
+      background-color: var(--primary-color);
+    }
+    .project__info {
+      position: absolute;
+      width: 100%;
+      height: 30%;
+      bottom: 0;
+      background-color: var(--primary-color);
+      clip-path: polygon(0% 0%, 50% 40%, 100% 0%, 100% 100%, 0% 100%);
+      z-index: 2;
+    }
+    .project__info:nth-child(2) {
+      position: absolute;
+      width: 100%;
+      height: 30%;
+      bottom: 0;
+      background-color: var(--secondary-color);
+      clip-path: polygon(0% 0%, 50% 20%, 100% 0%, 100% 100%, 0% 100%);
+      z-index: 1;
+    }
+    .project__info .project__info-name {
+      position: absolute;
+      bottom: 25px;
+      right: 10px;
+      left: 10px;
+      z-index: 3;
+      font-weight: 600;
+      color: #fff;
+      display: flex;
+    }
+    .project__info .project__info-name p {
+      margin-left: 5px;
+      font-size: 13px;
+      color: var(--secondary-color);
+    }
+    .project__info .project__info-location {
+      position: absolute;
+      width: fit-content;
+      bottom: 10px;
+      right: 10px;
+      left: 10px;
+      z-index: 3;
+      font-weight: 600;
+      color: #fcc904;
+      font-size: 12px;
+    }
+  </style>
+  <body>
+    <header>
+      <div class="innerContainer">
+        <div class="header">
+          <div class="logo">
+            <img src="../assets/images/logos/enerjinet-logo.png" alt="" />
+          </div>
+          <div class="menu__toggle">
+            <!-- <i class="fa-solid fa-bars-staggered"></i> -->
+            <svg
+              class="toggle__menu"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 448 512"
+            >
+              <!-- Üst Çizgi (Sarı) -->
+              <path
+                class="line-side"
+                d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96z"
+              />
+
+              <!-- Orta Çizgi (Kırmızı) -->
+              <path
+                class="line-middle"
+                d="M0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32z"
+              />
+
+              <!-- Alt Çizgi (Kırmızı) -->
+              <path
+                class="line-side"
+                d="M448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"
+              />
+            </svg>
+          </div>
+          <nav>
+            <ul>
+              <li class="mobile__logo">
+                <img src="./assets/images/logos/enerjinet-logo.png" alt="" /><i
+                  class="fa-solid fa-xmark toggle__menu"
+                ></i>
+              </li>
+              <li><a href="/index.html">Anasayfa</a></li>
+              <li><a href="/pages/about.html">Hakkımızda</a></li>
+              <li><a href="/pages/service.html">Hizmetlerimiz</a></li>
+              <li><a href="/pages/projects.html">Projelerimiz</a></li>
+              <li><a href="/pages/contact.html">İletişim</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <div class="container">
+      <div class="projects global__padding">
+        <h1 class="global__title">
+          <div class="right"></div>
+          <p>Bugüne Kadar Neler Yaptık?</p>
+          <div class="left"></div>
+        </h1>
+        <div class="innerContainer">
+          <div class="projects__list">
+            <div
+              class="project__box reveal-box reveal-box-rt"
+              style="
+                background-image: url(https://static.vecteezy.com/system/resources/thumbnails/040/995/143/small/ai-generated-fields-of-solar-panels-and-systems-to-produce-green-electricity-ai-generated-photo.jpg);
+              "
+            >
+              <a href="#">
+                <div class="project__info">
+                  <div class="project__info-name">
+                    CBS GES
+                    <p>(1500 kWp)</p>
+                  </div>
+                  <div class="project__info-location">
+                    Kahramanmaraş/Şahinkayası
+                  </div>
+                </div>
+                <div class="project__info"></div>
+              </a>
+            </div>
+            <div
+              class="project__box reveal-box reveal-box-rt"
+              style="
+                background-image: url(https://news.mit.edu/sites/default/files/styles/news_article__image_gallery/public/images/202006/MIT-PPA-1-Press_solar_array_3.jpg?itok=42Lhjby-);
+              "
+            >
+              <a href="#">
+                <div class="project__info">
+                  <div class="project__info-name">
+                    Bekir Kar Tavukçuluk GES
+                    <p>(1300 kWp)</p>
+                  </div>
+                  <div class="project__info-location">
+                    Kahramanmaraş/Yeşilyöre
+                  </div>
+                </div>
+                <div class="project__info"></div>
+              </a>
+            </div>
+            <div
+              class="project__box reveal-box reveal-box-rt"
+              style="
+                background-image: url(https://alpexsolar.com/resources/wp-content/uploads/2024/09/Untitleddesign-2024-09-05T184343.91.jpeg);
+              "
+            >
+              <a href="#">
+                <div class="project__info">
+                  <div class="project__info-name">
+                    Medusa GES
+                    <p>(1300 kWp)</p>
+                  </div>
+                  <div class="project__info-location">
+                    Kahramanmaraş/Yeşilyöre
+                  </div>
+                </div>
+                <div class="project__info"></div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer global__padding">
+      <div class="innerContainer non_padding">
+        <div class="footer__content footer__grid">
+          <div class="footer__logo">
+            <img src="../assets/images/logos/enerjinet-logo.png" alt="Logo" />
+          </div>
+          <div class="footer__links footer__grid">
+            <div class="footer__title">Hızlı Linkler</div>
+            <ul>
+              <li>
+                <a href="./about.html"
+                  ><i class="fa-solid fa-house"></i>Anasayfa</a
+                >
+              </li>
+              <li>
+                <a href="./about.html"
+                  ><i class="fa-solid fa-circle-info"></i>Hakkımızda</a
+                >
+              </li>
+              <li>
+                <a href="./projects.html"
+                  ><i class="fa-solid fa-diagram-project"></i>Projeler</a
+                >
+              </li>
+              <li>
+                <a href="./contact.html"
+                  ><i class="fa-solid fa-phone"></i>İletişim</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer__social footer__grid">
+            <div class="footer__title">Bağlantılar</div>
+            <a href="#"><i class="fa-brands fa-instagram"></i>İnstagram</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__copyright">
+        &copy; 2026 <span class="secondary_color">enerji</span
+        ><span class="primary_color">NET</span> Solar & Elektrik. Tüm hakları
+        saklıdır.
+      </div>
+    </footer>
+    <script src="../assets/js/main.js"></script>
+  </body>
+</html>

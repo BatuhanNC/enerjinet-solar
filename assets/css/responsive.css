@@ -1,0 +1,124 @@
+@media (max-width: 768px) {
+  header {
+    padding: 10px 20px;
+  }
+  header .logo {
+    width: 150px;
+  }
+  .menu__toggle {
+    display: block;
+    cursor: pointer;
+  }
+  .menu__toggle i {
+    font-size: 1.5em;
+    color: var(--primary-color);
+  }
+  nav {
+    display: none;
+  }
+  nav ul {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #000;
+    width: 100%;
+    height: 100vh;
+    z-index: 5;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding: 0 0 10px 0;
+    border-radius: 0 0 10px 0;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+  }
+  nav ul li {
+    border-bottom: 1px solid var(--text-color);
+    padding-bottom: 10px;
+    padding-left: 10px;
+    margin: 0;
+    margin-bottom: 10px;
+  }
+  nav ul .mobile__logo {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  nav ul .mobile__logo img {
+    width: 80%;
+    margin: 10px 0;
+  }
+  nav ul .mobile__logo i {
+    font-size: 1.7em;
+    color: #fff;
+  }
+  .banner h1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .about__inner {
+    flex-direction: column;
+    min-height: 150px;
+  }
+  .about__inner-box {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .about__inner-box h1 span {
+    font-size: 30px !important;
+  }
+  .about__projects {
+    flex-direction: column;
+    margin-top: 20px;
+  }
+  .about__projects .about__projects-box {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .line__box {
+    font-size: 1em;
+  }
+  .services .service__inner {
+    flex-direction: column;
+  }
+  .service__inner-box {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .stats .stats__inner {
+    grid-template-columns: 1fr;
+  }
+  .projects .projects__inner {
+    grid-template-columns: 1fr;
+  }
+  .footer__content {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .footer__logo {
+    flex: 0 0 100%;
+  }
+  .footer__links,
+  .footer__social {
+    flex: 1;
+  }
+  h1 {
+    font-size: 35px !important;
+  }
+  h3 {
+    font-size: 15px !important;
+  }
+  .global__title p {
+    flex: 2;
+  }
+  /* SERVICE PAGE CSS */
+  .service .service__box {
+    display: flex;
+    flex-direction: column;
+  }
+  .service .service__box-icon {
+    margin-bottom: 10px;
+  }
+  .service .service__box-content {
+    text-align: center;
+  }
+}
